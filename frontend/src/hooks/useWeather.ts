@@ -22,12 +22,13 @@ export function useWeather() {
   const [data, setData] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const BACKEND_URL = "https://weather-backend.onrender.com";
 
   const fetchWeather = async (lat: number, lon: number) => {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch(`http://localhost:8000/api/weather?lat=${lat}&lon=${lon}`);
+      const response = await fetch(`${BACKEND_URL}/api/weather?lat=${lat}&lon=${lon}`);
       if (!response.ok) {
         throw new Error('Failed to fetch weather data');
       }
