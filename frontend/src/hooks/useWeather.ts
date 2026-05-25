@@ -22,7 +22,7 @@ export function useWeather() {
   const [data, setData] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const BACKEND_URL = "https://weather-backend.onrender.com";
+  const BACKEND_URL = "https://weathersphere-t746.onrender.com";
 
   const fetchWeather = async (lat: number, lon: number) => {
     setLoading(true);
